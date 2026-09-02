@@ -3,8 +3,13 @@
 
 @theme {
   --color-peach: #f6f3eaa3;
+  --color-peach-soft: #F6F2E7;
   --color-pink: #cf9389;
+  --color-pink-soft: #FFE0D6;
+  --color-grey-strong: #363D43;
   --color-grey-medium:#D2D6DB;
+  --color-blue-green: #517879;
+  --color-black: #262423;
+  --color-tag-soft: #ECE3D7;
   --font-family: 'Hind', sans-serif;
-
 }
