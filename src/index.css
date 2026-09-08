@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-peach: #f6f3eaa3;
+  --color-dark-bg-strong: #1E2326;
+  --color-dark-bg-soft: #212b2d;
   --color-peach-nav: #f6f3ea;
   --color-peach-soft: #F6F2E7;
   --color-pink: #cf9389;
