@@ -80,7 +80,7 @@ export default function Proyectos() {
                                         </a>
                                     )}
                                     {/* Enlace Mostrar más*/}
-                                    <button onClick={() => setSelectedProject(proyecto)}  className='text-xl text-slate-600  border border-slate-200/60 bg-white/35 rounded-full p-1 transition-all duration-200 cursor-pointer hover:scale-110 hover:text-slate-800 hover:border-slate-400 hover:bg-grey-medium '><FiMaximize2 className='text-lg'/></button>
+                                    <button aria-label={`Ver detalles de ${proyecto.title}`} onClick={() => setSelectedProject(proyecto)}  className='text-xl text-slate-600  border border-slate-200/60 bg-white/35 rounded-full p-1 transition-all duration-200 cursor-pointer hover:scale-110 hover:text-slate-800 hover:border-slate-400 hover:bg-grey-medium '><FiMaximize2 className='text-lg'/></button>
                                 </div>
                             </div>
                         </div>
