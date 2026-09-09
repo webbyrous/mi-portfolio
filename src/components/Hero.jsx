@@ -5,7 +5,7 @@ import { FaFileDownload } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <div className='bg-peach dark:bg-dark-bg-strong transition-colors duration-300'>
+        <div className='bg-peach dark:bg-dark-bg-strong transition-colors duration-300' id="inicio">
             <div className='grid grid-cols-1 md:grid-cols-2 px-6 py-12 font-family max-w-6xl mx-auto items-center gap-10'>
                 <div className='flex flex-col gap-4 order-2 md:order-1 text-center md:text-left'>
                     <h1 className=' dark:text-grey-medium md:pt-7 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-slate-800 leading-tight md:max-w-md'>Hola, soy <span className='text-pink font-semibold'>Rosario</span>, Desarrolladora Web Junior</h1>

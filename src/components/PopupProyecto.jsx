@@ -5,9 +5,9 @@ export default function PopupProyecto({ proyecto, onClose }) {
   if (!proyecto) return null;
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-      <div className="relative bg-white p-6 rounded-lg shadow-xl text-center flex flex-col gap-4 border-grey-medium  border-2">
+      <div className="relative bg-white p-6 dark:bg-dark-bg-strong dark:shadow-xs dark:shadow-grey-medium dark:border-dark-bg-strong  rounded-lg shadow-xl text-center flex flex-col gap-4 border-grey-medium border-2 dark:text-white">
          {/* Botón cerrar */}
-             <button onClick={onClose} className="absolute top-2 text-2xl right-4 p-2 rounded-full text-slate-400 hover:text-black hover:text-3xl transition-all cursor-pointer">
+             <button onClick={onClose} className="absolute top-2 text-2xl right-4 p-2 rounded-full text-slate-400 hover:text-black hover:text-3xl transition-all cursor-pointer dark:hover:text-pink/80">
                     <IoIosClose className="" />
             </button>
         <div className="flex flex-col shrink-0 w-75 sm:w-80 md:w-100 snap-center mt-8">
@@ -28,7 +28,7 @@ export default function PopupProyecto({ proyecto, onClose }) {
               {proyecto.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-tag-soft/80 px-2 py-0.5 text-xs rounded-md"
+                  className="bg-tag-soft/80 px-2 py-0.5 text-xs rounded-md dark:bg-pink/30"
                 >
                   {tag}
                 </span>
@@ -42,7 +42,7 @@ export default function PopupProyecto({ proyecto, onClose }) {
                   href={proyecto.webUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 text-sm font-semibold rounded-3xl py-1.5 px-2 hover:bg-pink/30 hover:shadow-2xs bg-pink/20 text-pink transition-all duration-200 hover:scale-105"
+                  className="flex items-center justify-center gap-1.5 text-sm font-semibold rounded-3xl py-1.5 px-2 hover:bg-pink/30 hover:shadow-2xs bg-pink/20 text-pink transition-all duration-200 hover:scale-105 dark:bg-grey-medium/20 dark:text-white dark:border-dark-bg-soft  dark:hover:bg-grey-medium/60"
                 >
                   <FaRegEye className="text-lg" />
                   Ver web
@@ -59,7 +59,7 @@ export default function PopupProyecto({ proyecto, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Código de ${proyecto.title}`}
-                  className="text-xl text-slate-600 hover:text-black transition-all duration-300 hover:scale-125"
+                  className="text-xl text-slate-600 hover:text-black transition-all duration-300 hover:scale-125 dark:text-pink/80 dark:hover:text-pink"
                   title="Repositorio en GitHub"
                 >
                   <FaGithub className="text-2xl" />

@@ -22,6 +22,16 @@ export default function Navbar() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  // Creamos los enlaces con sus referencias para navegar
+  const navLinks = [
+    {name: 'Inicio', href:'#inicio'},
+    { name: 'Sobre mí', href: '#sobre-mi' },
+    { name: 'Habilidades', href: '#habilidades' },
+    { name: 'Estudios', href: '#estudios' },
+    { name: 'Proyectos', href: '#proyectos' },
+    { name: 'Contacto', href: '#contacto' },
+  ];
+
   return (
     <nav className='bg-peach dark:bg-dark-bg-strong dark:text-grey-medium font-family relative z-50 transition-colors duration-300'>
       <div className='flex items-center justify-between md:justify-center py-4 px-6 md:px-0 md:gap-8 md:text-lg '>
@@ -30,13 +40,11 @@ export default function Navbar() {
           flex-col md:flex md:flex-row md:w-auto md:static 
           absolute top-full left-0 w-full md:h-auto 
           bg-peach-nav md:bg-transparent dark:bg-dark-bg-strong md:gap-8 items-center justify-start md:justify-center 
-          z-50 shadow-2xl md:shadow-none`}>
-          <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 md:py-1 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>Inicio</li>
-          <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink  hover:scale-105 hover:-translate-y-1 cursor-pointer  md:py-1'>Sobre mí</li>
-          <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink  hover:scale-105 hover:-translate-y-1 cursor-pointer md:py-1'>Habilidades</li>
-          <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink  hover:scale-105 hover:-translate-y-1 cursor-pointer md:py-1'>Estudios</li>
-          <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink  hover:scale-105 hover:-translate-y-1 cursor-pointer md:py-1'>Proyectos</li>
-          <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink  hover:scale-105 hover:-translate-y-1 cursor-pointer md:py-1'>Contacto</li>
+          z-50 shadow-2xl md:shadow-none transitions-colors duration-300 md:dark:bg-transparent`}>
+          {navLinks.map((link) => (
+            <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 md:py-1 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>
+              <a href={link.href} className='block md:inline-block w-full py-1.5 md:py-0'>{link.name}</a></li>
+          ))}
         </ul>
         {/*Botón de cambiar el tema */}
         <div className='flex gap-2 py-2 px-2 rounded-2xl border-grey-medium/70 dark:border-grey-medium/30 border'>

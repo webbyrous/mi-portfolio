@@ -15,11 +15,11 @@ export default function Estudios() {
     const getButtonClass = (year) => {
         const isActive = selectedYear === year;
         return `flex items-center justify-center font-bold text-base sm:text-md md:text-lg gap-1 rounded-xl py-2 px-4 shadow-lg border-2  cursor-pointer transition-colors duration-300
-        ${isActive ? 'text-white bg-pink/60 shadow-pink/70 border-none dark:bg-pink dark:shadow-pink/30' : 'text-black dark:text-grey-medium bg-transparent dark:bg-dark-bg-strong border-grey-medium/50 hover:border-pink/50 dark:hover:bg-pink' }`;
+        ${isActive ? 'text-white bg-pink/60 shadow-pink/70 border-none dark:bg-pink dark:shadow-pink/30' : 'text-black dark:text-grey-medium bg-transparent dark:bg-dark-bg-strong border-grey-medium/50 hover:bg-pink/60 hover:border-pink/20 hover:shadow-pink/70 hover:text-white dark:hover:bg-pink' }`;
     };
 
     return (
-        <div className='font-family bg-peach-soft dark:bg-dark-bg-soft dark:text-slate-200 flex flex-col justify-center items-center gap-4 pb-8'>
+        <div className='font-family bg-peach-soft dark:bg-dark-bg-soft dark:text-slate-200 flex flex-col justify-center items-center gap-4 pb-8' id='estudios'>
             <h2 className='font-bold  text-2xl sm:text-3xl md:text-4xl text-center mt-5'>Estudios</h2>
             <p className='text-base sm:text-md md:text-lg lg:text-xl'>Mi recorrido personal</p>
             <div className='flex flex-col gap-6 max-w-4xl'>
@@ -29,8 +29,8 @@ export default function Estudios() {
                     <div className='relative w-full'>
                         <select value={selectedYear} onChange = {(e) => setSelectedYear(e.target.value)}
                         aria-label='Filtrar estudios por año'
-                        className='w-full appearance-none bg-white border-2 border-pink/60 font-semibold py-2 pl-3 pr-10 rounded-xl text-black shadow-sm focus:outline-none text-sm focus:ring-2 focus:ring-pink/50'>
-                            <option value="all" className="text-slate-800 font-medium py-2">Todos</option>
+                        className='w-full appearance-none bg-white border-2 border-pink/60 font-semibold py-2 pl-3 pr-10 rounded-xl text-black shadow-sm focus:outline-none text-sm focus:ring-2 focus:ring-pink/50  dark:bg-grey-strong dark:text-slate-200 dark:border-grey-medium/20'>
+                            <option value="all" className="text-slate-800 dark:text-slate-200 font-medium py-2">Todos</option>
                             <option value="2026">2026</option>
                             <option value="2025">2025</option>
                             <option value="2024">2024</option>
@@ -38,7 +38,7 @@ export default function Estudios() {
                             <option value="2022">2022</option>
                         </select>
                         {/* Icono de flecha para estilizar el select nativo */}
-                        <FaChevronDown className='absolute right-3.5 top-1/2 -translate-y-1/2 text-black pointer-events-none text-xs' />
+                        <FaChevronDown className='absolute right-3.5 top-1/2 -translate-y-1/2 text-black pointer-events-none text-xs dark:text-slate-200' />
                     </div>
                 </div>
                 {/* Cuando se haga click en el botón cambiamos el año según el botón seleccionado */}
@@ -70,18 +70,18 @@ export default function Estudios() {
                         const isBootcamp = study.tag === 'Bootcamp';
                         const hoverStyles = stateStudy ? 'hover:text-pink hover:border-pink/60 hover:bg-pink/10'
                             : isBootcamp ? 'hover:text-blue-green hover:bg-blue-green/20 ' 
-                            : 'hover:text-slate-800 hover:bg-grey-medium/30'
+                            : 'hover:text-slate-600 dark:hover:text-slate-800 hover:bg-dark-bg-soft/20 dark:hover:bg-grey-medium/30'
                         return (
                             <div key={study.id} className={`relative min-w-75 flex flex-col bg-peach border-2 rounded-xl py-4 px-5 sm:px-8 shadow-xl gap-3 dark:bg-dark-bg-strong transition duration-300 ${stateStudy ? 'border-pink/60 dark:border-pink' : isBootcamp ?  'border-blue-green' : 'border-grey-medium/90 dark:border-grey-medium/50'}`}>
                                { study.certificateUrl && ( <a href={study.certificateUrl} target="_blank"
                                 rel="noopener noreferrer" 
-                                className={`absolute right-4 top-4 p-2 text-slate-400 border border-slate-200/60 dark:border-blue-green/20 bg-white/35 dark:bg-blue-green/30 dark:text-grey-medium rounded-full transition-all duration-200 cursor-pointer ${hoverStyles}`}><FaRegEye className="text-xl" />
+                                className={`absolute right-4 top-4 p-2 text-slate-400 border border-slate-200/60 dark:border-grey-strong/20 bg-white/35 dark:bg-grey-strong dark:text-grey-medium rounded-full transition-all duration-200 cursor-pointer ${hoverStyles}`}><FaRegEye className="text-xl" />
                                 </a>
                             )}
                                 <span className={`text-white rounded-2xl w-max py-1 px-2 text-xs md:text-base ${stateStudy ? 'bg-pink/60' : isBootcamp ? 'bg-blue-green' : 'bg-grey-strong'}`}>{study.status}</span>
                                 <h2 className='pr-8 text-base sm:text-md md:text-lg lg:text-xl font-bold'>{study.title}</h2>
                                 <h3 className='text-md md:text-lg'>{study.institution}</h3>
-                                <p className='bg-peach-soft/50 px-2 py-0.5 rounded-xl text-xs w-max border border-grey-medium'>{study.tag}</p>
+                                <p className='bg-peach-soft/50 px-2 py-0.5 rounded-lg text-xs w-max border border-grey-medium dark:bg-grey-strong dark:border-grey-strong'>{study.tag}</p>
                             </div>
                         );
                     })}

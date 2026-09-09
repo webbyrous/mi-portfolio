@@ -6,9 +6,13 @@ import Contacto from "./components/Contacto"
 import Social from "./components/Social"
 import SobreMi from "./components/SobreMi"
 import Habilidades from "./components/Habilidades"
+import { useEffect } from "react"
 
 
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add('scroll-smooth');
+  }, []);
   return (
     <>
       <Navbar />
