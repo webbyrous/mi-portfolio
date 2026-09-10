@@ -4,8 +4,8 @@ import { IoIosClose } from "react-icons/io";
 export default function PopupProyecto({ proyecto, onClose }) {
   if (!proyecto) return null;
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-      <div className="relative bg-white p-6 dark:bg-dark-bg-strong dark:shadow-xs dark:shadow-grey-medium dark:border-dark-bg-strong  rounded-lg shadow-xl text-center flex flex-col gap-4 border-grey-medium border-2 dark:text-white">
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center" onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()} className="relative bg-peach-soft p-6 dark:bg-dark-bg-strong dark:shadow-xs dark:shadow-grey-medium dark:border-dark-bg-strong  rounded-lg shadow-xl text-center flex flex-col gap-4 border-grey-medium border-2 dark:text-white">
          {/* Botón cerrar */}
              <button onClick={onClose} className="absolute top-2 text-2xl right-4 p-2 rounded-full text-slate-400 hover:text-black hover:text-3xl transition-all cursor-pointer dark:hover:text-pink/80">
                     <IoIosClose className="" />
@@ -59,7 +59,7 @@ export default function PopupProyecto({ proyecto, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Código de ${proyecto.title}`}
-                  className="text-xl text-slate-600 hover:text-black transition-all duration-300 hover:scale-125 dark:text-pink/80 dark:hover:text-pink"
+                  className="text-xl text-slate-600 hover:text-black transition-all duration-300 hover:scale-125 dark:text-pink dark:hover:text-pink"
                   title="Repositorio en GitHub"
                 >
                   <FaGithub className="text-2xl" />

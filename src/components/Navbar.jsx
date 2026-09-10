@@ -33,16 +33,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className='bg-peach dark:bg-dark-bg-strong dark:text-grey-medium font-family relative z-50 transition-colors duration-300'>
+    <nav className='bg-peach backdrop-blur-2xl dark:bg-dark-bg-strong dark:text-grey-medium font-family sticky top-0 md:relative md:backdrop-blur-none z-50 transition-colors duration-300 border-b border-grey-medium/50 md:border-0 dark:border-grey-medium/10'>
       <div className='flex items-center justify-between md:justify-center py-4 px-6 md:px-0 md:gap-8 md:text-lg '>
         {/*Menú de navegación */}
         <ul className={`${isOpen ? 'flex' : 'hidden'} 
           flex-col md:flex md:flex-row md:w-auto md:static 
           absolute top-full left-0 w-full md:h-auto 
-          bg-peach-nav md:bg-transparent dark:bg-dark-bg-strong md:gap-8 items-center justify-start md:justify-center 
+          bg-peach-nav md:bg-transparent dark:bg-dark-bg-strong gap-2 md:gap-8 items-center justify-start md:justify-center 
           z-50 shadow-2xl md:shadow-none transitions-colors duration-300 md:dark:bg-transparent`}>
           {navLinks.map((link) => (
-            <li onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center py-3 md:py-1 inline-block transition-all duration-300 rounded-lg px-3  hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>
+            <li key={link.name} onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center  md:py-1 inline-block transition-all duration-300 rounded-lg px-3 py-1 md:py-3 hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>
               <a href={link.href} className='block md:inline-block w-full py-1.5 md:py-0'>{link.name}</a></li>
           ))}
         </ul>

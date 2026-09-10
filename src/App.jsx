@@ -3,7 +3,7 @@ import Hero from "./components/Hero"
 import Estudios from "./components/Estudios"
 import Proyectos from "./components/Proyectos"
 import Contacto from "./components/Contacto"
-import Social from "./components/Social"
+import Footer from "./components/Footer"
 import SobreMi from "./components/SobreMi"
 import Habilidades from "./components/Habilidades"
 import { useEffect } from "react"
@@ -22,7 +22,7 @@ function App() {
       <Estudios />
       <Proyectos />
       <Contacto />
-      <Social />
+      <Footer />
     </>
   )
 }

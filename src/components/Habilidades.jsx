@@ -19,14 +19,14 @@ export default function Habilidades() {
        { name:"SQL", icon:FaDatabase},
     ];
     return (
-        <div className='bg-peach dark:bg-dark-bg-strong dark:text-grey-medium transition-colors duration-300' id='habilidades'>
+        <div className='bg-peach dark:bg-dark-bg-strong dark:text-grey-medium transition-colors duration-300 scroll-mt-20' id='habilidades'>
             <div className= 'font-family px-6 py-8 max-w-6xl mx-auto'>
                 <h2 className='font-bold text-black text-2xl sm:text-3xl md:text-4xl py-4 text-center dark:text-grey-medium'>Habilidades</h2>
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-4xl'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-xs sm:max-w-2xl md:max-w-4xl px-6 md:px-0'>
                     {habilidades.map((habilidad) => {
                         const Icon = habilidad.icon;
                         return (
-                            <div className='max-w-80 border-2 border-pink/40 shadow-xl dark:shadow-pink dark:shadow-xs rounded-md bg-transparent dark:bg-dark-bg-soft flex flex-col items-center py-2 md:py-5 gap-4'>
+                            <div key={habilidad.name} className='border-2 border-pink/40 shadow-xl dark:shadow-pink dark:shadow-xs rounded-md bg-transparent dark:bg-dark-bg-soft flex flex-col items-center py-4 md:py-5 gap-4 transition-transform duration-300 hover:scale-105 w-full max-w-[260px]'>
                             <span className='text-5xl md:text-6xl text-pink'><Icon/></span>
                             <p className='text-base sm:text-lg md:text-xl'>{habilidad.name}</p>
                             </div>
