@@ -39,12 +39,16 @@ export default function Navbar() {
         <ul className={`${isOpen ? 'flex' : 'hidden'} 
           flex-col lg:flex lg:flex-row lg:w-auto lg:static 
           absolute top-full left-0 w-full lg:h-auto 
-          bg-peach-nav lg:bg-transparent dark:bg-dark-bg-strong gap-2 lg:gap-8 items-center justify-start lg:justify-center 
+          bg-peach-nav lg:bg-transparent dark:bg-dark-bg-strong gap-2 lg:gap-15 items-center justify-start lg:justify-center 
           z-50 shadow-2xl lg:shadow-none transitions-colors duration-300 lg:dark:bg-transparent`}>
-          {navLinks.map((link) => (
-            <li key={link.name} onClick={() => setIsOpen(false)} className='w-full lg:w-auto text-center lg:py-1 inline-block transition-all duration-300 rounded-lg px-3 py-1 hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>
-              <a href={link.href} className='block md:inline-block w-full py-1.5 lg:py-0'>{link.name}</a></li>
-          ))}
+          {navLinks.map((link) => {
+            // En pantallas grandes no nos interesa mostrar la opción Inicio
+            const isInicio = link.name ==='Inicio';
+              return (
+              <li key={link.name} onClick={() => setIsOpen(false)} className={`${isInicio ? 'lg:hidden' : ''} w-full lg:w-auto text-center lg:py-1 inline-block transition-all duration-300 rounded-lg px-3 py-1 hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer`}>
+                <a href={link.href} className='block md:inline-block w-full py-1.5 lg:py-0'>{link.name}</a></li>
+              );
+          })}
         </ul>
         {/*Botón de cambiar el tema */}
         <div className='flex gap-2 py-2 px-2 rounded-2xl border-grey-medium/70 dark:border-grey-medium/30 border'>
