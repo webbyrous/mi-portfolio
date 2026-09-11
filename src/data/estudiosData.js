@@ -71,4 +71,13 @@ export const studiesData = [
     tag: 'Certificado oficial',
     certificateUrl: 'https://www.credly.com/badges/a63db41c-dae3-4a21-ac15-2e770ff329aa/linked_in_profile'
   },
+   {
+    id: 9,
+    year: '2024',
+    status: 'Finalizado',
+    title: 'Diseño, Interfaces y CSS',
+    institution: 'Código Facilito',
+    tag: 'Bootcamp',
+    certificateUrl: 'https://drive.google.com/file/d/1NksqCxKy1kzLhh7eLhotcWtOs3hDavdk/preview'
+  },
 ];

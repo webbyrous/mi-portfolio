@@ -31,7 +31,7 @@ export default function Proyectos() {
                 {/*Flecha izquierda */}
                 <button aria-label="Desplazar proyectos hacia la izquierda" onClick={scrollLeft} className='hidden md:flex p-3 bg-white dark:bg-grey-medium/20 dark:text-white border border-slate-200 dark:border-dark-bg-soft text-slate-700 dark:hover:bg-grey-medium/60  rounded-full shadow-md hover:shadow-none hover:bg-pink/65 hover:text-white transition-all duration-300 active:scale-95 cursor-pointer h-max place-self-center z-30 absolute left-0 sm:-left-3 md:-left-7 top-1/2 -translate-y-1/2 mx-3'><FaChevronLeft aria-hidden="true" className="text-lg"/></button>
                 {/*Tarjetas proyectos */}
-                <div ref={carruselRef} className='flex overflow-x-auto snap-x snap-mandatory scrollbar-none min-w-0 gap-6 px-4 py-4 lg:justify-center'>
+                <div ref={carruselRef} className='flex overflow-x-auto snap-x snap-mandatory scrollbar-none min-w-0 gap-6 px-4 py-4 lg:justify-start'>
                     {proyectosData.map((proyecto) => (
                         <div key={proyecto.id} className='flex flex-col shrink-0 w-[85%] sm:w-[320px] md:w-[340px] snap-center border-2 border-grey-medium dark:border dark:shadow-pink dark:shadow-xs dark:border-dark-pink/50 rounded-xl bg-peach-soft/40 dark:bg-dark-bg-soft transition-transform hover:scale-105 duration-300 hover:cursor-pointer' onClick={() => setSelectedProject(proyecto)}>
                             {/* Imagen del proyecto */}

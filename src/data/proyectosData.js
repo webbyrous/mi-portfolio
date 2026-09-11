@@ -1,6 +1,8 @@
 import imgAgenda from '../assets/agenda-912ea5a4.png';
 import imgPetFinder from '../assets/petfinder_img.png';
 import imgSeaSchool from '../assets/seaschool-bd55acc8.png';
+import imgLifeTravel from '../assets/lifetravel.png';
+
 
 export const proyectosData = [
   {
@@ -29,5 +31,14 @@ export const proyectosData = [
     tags: ["HTML", "CSS"],
     githubUrl: 'https://github.com/webbyrous/pagina-surf',
     webUrl:'https://webbyrous.github.io/pagina-surf/'
+  },
+  {
+    id: 4,
+    title: 'LifeTravel',
+    description: 'LifeTravel es un proyecto sobre una landing page responsive sobre una agencia de viajes que ofrece distintos servicios y destinos para viajar. Consta de un modo light y dark, tanto para el diseño desktop y mobile.',
+    image:  imgLifeTravel,
+    tags: ["Figma", "CSS"],
+    githubUrl: '',
+    webUrl:'https://www.figma.com/design/A6i6y7r0eFE1XdXecPwlid/Travel-Agency?node-id=0-1&p=f&t=p7EApvEVvCUkCWGA-0'
   }
 ];
