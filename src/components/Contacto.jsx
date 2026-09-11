@@ -23,7 +23,7 @@ export default function Contacto() {
         event.target.reset();
       } else {
         console.error("Error", data);
-        setResult(data.message | "Hubo un error al enviar el mensaje");
+        setResult(data.message || "Hubo un error al enviar el mensaje");
       }
     } catch (error) {
       console.error("Error", error);
@@ -33,8 +33,8 @@ export default function Contacto() {
     }
   };
   return (
-    <div
-      className="bg-peach-soft dark:bg-dark-bg-soft dark:text-slate-200 pb-6 scroll-mt-20"
+    <section
+      className="bg-peach-soft dark:bg-dark-bg-soft dark:text-slate-200 pb-6 transition-colors duration-300 scroll-mt-20"
       id="contacto"
     >
       <div className="font-family flex flex-col md:flex-row justify-center md:gap-10  max-w-6xl mx-auto text-center md:text-left items-center md:items-start">
@@ -46,13 +46,14 @@ export default function Contacto() {
         </div>
         <div className="flex flex-col gap-3 w-full px-6 max-w-md md:w-1/2">
           <p className="text-lg mt-6">Email</p>
-          <form onSubmit={onSubmit} className="flex flex-col gap-4 w-full">
+          <form onSubmit={onSubmit} className="flex flex-col gap-4 w-full text-slate-800 dark:text-white">
             {/* Campo honeypot anti-spam oculto */}
             <input
               type="checkbox"
               name="botcheck"
               className="hidden"
               style={{ display: "none" }}
+              aria-hidden="true"
             />{" "}
             <input
               type="email"
@@ -60,17 +61,19 @@ export default function Contacto() {
               className="w-full border-2 border-pink/60 dark:border-grey-medium/40 rounded-lg py-1 px-2 focus:shadow-xl focus:border-pink focus:outline-none"
               placeholder="Tu correo electrónico"
               autoComplete="email"
+              aria-label="Tu correo electrónico"
               required
             />
             <textarea
               name="message"
               className="w-full border-2 border-pink/60 rounded-lg py-1 px-2 focus:shadow-xl focus:outline-none focus:border-pink dark:border-grey-medium/40"
               placeholder="Mensaje"
+              aria-label="Tu mensaje"
               required
             ></textarea>
             <button
               type="submit"
-              className="bg-pink/80 rounded-lg max-w-max px-7 py-1.5 text-white hover:cursor-pointer hover:bg-pink/90 dark:bg-dark-pink/85 dark:hover:bg-dark pink hover:shadow-md mx-auto md:mx-0 transition-all duration-300 hover:scale-105"
+              className="bg-pink/80 rounded-lg max-w-max px-7 py-1.5 text-white hover:cursor-pointer hover:bg-pink/90 dark:bg-dark-pink/85 dark:hover:bg-dark pink hover:shadow-md mx-auto md:mx-0 transition-all duration-300 hover:scale-105" disabled={isSubmitting} aria-busy={isSubmitting}
             >
               {isSubmitting ? "Enviando..." : "Enviar"}
             </button>
@@ -82,6 +85,6 @@ export default function Contacto() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
