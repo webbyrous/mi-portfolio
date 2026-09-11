@@ -23,8 +23,8 @@ export default function Estudios() {
     // Según el año que se encuentre activo definimos las clases de los botones
     const getButtonClass = (year) => {
         const isActive = selectedYear === year;
-        return `flex items-center justify-center font-bold text-base sm:text-md md:text-lg gap-1 rounded-xl py-2 px-4 shadow-lg border-2  cursor-pointer transition-colors duration-300
-        ${isActive ? 'text-white bg-pink/60 shadow-pink/70 border-none dark:bg-pink dark:shadow-pink/30' : 'text-black dark:text-grey-medium bg-transparent dark:bg-dark-bg-strong border-grey-medium/50 hover:bg-pink/60 hover:border-pink/20 hover:shadow-pink/70 hover:text-white dark:hover:bg-pink' }`;
+        return `flex items-center justify-center font-bold text-base sm:text-md md:text-lg gap-1 rounded-xl py-2 px-4 shadow-lg border-2  cursor-pointer transition-all duration-300 ease-in-out
+        ${isActive ? 'text-white bg-pink border-pink shadow-pink/30 dark:bg-pink dark:shadow-pink/30 active:scale-95' : 'text-slate-800 dark:text-grey-medium bg-transparent dark:bg-dark-bg-strong border-grey-medium/40 dark:border-grey-medium/20 dark:hover:border-dark-pink/40 dark:hover:text-white hover:bg-pink/60 hover:border-pink/30 hover:text-white dark:hover:bg-dark-pink/70 hover:-translate-y-0.5' }`;
     };
 
     return (
@@ -69,7 +69,7 @@ export default function Estudios() {
                                 className={`absolute right-4 top-4 p-2 text-slate-400 border border-slate-200/60 dark:border-grey-strong/20 bg-white/35 dark:bg-grey-strong dark:text-grey-medium rounded-full transition-all duration-200 cursor-pointer ${hoverStyles}`}><FaRegEye className="text-xl" />
                                 </a>
                             )}
-                                <span className={`text-white rounded-2xl w-max py-1 px-2 text-xs md:text-base ${stateStudy ? 'bg-pink/60' : isBootcamp ? 'bg-blue-green' : 'bg-grey-strong'}`}>{study.status}</span>
+                                <span className={`text-white rounded-2xl w-max py-1 px-2 text-xs md:text-base ${stateStudy ? 'bg-pink/60 dark:bg-dark-pink' : isBootcamp ? 'bg-blue-green' : 'bg-grey-strong'}`}>{study.status}</span>
                                 <h2 className='pr-8 text-base sm:text-md md:text-lg lg:text-xl font-bold'>{study.title}</h2>
                                 <h3 className='text-md md:text-lg'>{study.institution}</h3>
                                 <p className='bg-grey-medium/50 px-2 py-0.5 rounded-lg text-xs w-max border border-grey-medium/30 dark:bg-grey-strong dark:border-grey-strong'>{study.tag}</p>

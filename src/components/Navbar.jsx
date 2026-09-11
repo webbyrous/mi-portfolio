@@ -34,16 +34,16 @@ export default function Navbar() {
 
   return (
     <nav className='bg-peach backdrop-blur-2xl dark:bg-dark-bg-strong dark:text-grey-medium font-family sticky top-0 md:relative md:backdrop-blur-none z-50 transition-colors duration-300 border-b border-grey-medium/50 md:border-0 dark:border-grey-medium/10'>
-      <div className='flex items-center justify-between md:justify-center py-4 px-6 md:px-0 md:gap-8 md:text-lg '>
+      <div className='flex items-center justify-between lg:justify-center py-4 px-6 lg:px-0 lg:gap-8 md:text-lg '>
         {/*Menú de navegación */}
         <ul className={`${isOpen ? 'flex' : 'hidden'} 
-          flex-col md:flex md:flex-row md:w-auto md:static 
-          absolute top-full left-0 w-full md:h-auto 
-          bg-peach-nav md:bg-transparent dark:bg-dark-bg-strong gap-2 md:gap-8 items-center justify-start md:justify-center 
-          z-50 shadow-2xl md:shadow-none transitions-colors duration-300 md:dark:bg-transparent`}>
+          flex-col lg:flex lg:flex-row lg:w-auto lg:static 
+          absolute top-full left-0 w-full lg:h-auto 
+          bg-peach-nav lg:bg-transparent dark:bg-dark-bg-strong gap-2 lg:gap-8 items-center justify-start lg:justify-center 
+          z-50 shadow-2xl lg:shadow-none transitions-colors duration-300 lg:dark:bg-transparent`}>
           {navLinks.map((link) => (
-            <li key={link.name} onClick={() => setIsOpen(false)} className='w-full md:w-auto text-center  md:py-1 inline-block transition-all duration-300 rounded-lg px-3 py-1 md:py-3 hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>
-              <a href={link.href} className='block md:inline-block w-full py-1.5 md:py-0'>{link.name}</a></li>
+            <li key={link.name} onClick={() => setIsOpen(false)} className='w-full lg:w-auto text-center lg:py-1 inline-block transition-all duration-300 rounded-lg px-3 py-1 hover:bg-pink/20 hover:text-pink hover:scale-105 hover:-translate-y-1 cursor-pointer'>
+              <a href={link.href} className='block md:inline-block w-full py-1.5 lg:py-0'>{link.name}</a></li>
           ))}
         </ul>
         {/*Botón de cambiar el tema */}
@@ -58,7 +58,7 @@ export default function Navbar() {
           </button>
         </div>
         {/*Botón hamburguesa versión móvil */}
-        <button onClick={() => setIsOpen(!isOpen)} className='md:hidden text-2xl p-2 text-slate-800 dark:text-grey-medium hover:cursor-pointer hover:text-pink transition-colors focus:outline-none'>
+        <button onClick={() => setIsOpen(!isOpen)} className='lg:hidden text-2xl p-2 text-slate-800 dark:text-grey-medium hover:cursor-pointer hover:text-pink transition-colors focus:outline-none'>
           {isOpen ? <HiX /> : <HiMenu />}
         </button>
       </div>

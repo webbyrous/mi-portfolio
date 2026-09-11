@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaLinkedin, FaGithub  } from "react-icons/fa";
 
 
@@ -12,8 +11,8 @@ export default function Footer() {
             <a  href="https://www.linkedin.com/in/rosario-bernal/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="Perfil de LinkedIn" className='flex gap-2 items-center text-base md:text-lg transition-colors duration-200 group hover:text-pink'>
-                <span className='text-pink text-2xl md:text-3xl transition-transform duration-200 group-hover:scale-110'><FaLinkedin />
+                aria-label="Perfil de LinkedIn" className='flex gap-2 items-center text-base md:text-lg transition-all duration-200 group hover:text-pink hover:font-semibold'>
+                <span className='text-pink dark:text-dark-pink text-2xl md:text-3xl transition-transform duration-200 group-hover:scale-110'><FaLinkedin />
                 </span>
                 LinkedIn
             </a>
@@ -21,8 +20,8 @@ export default function Footer() {
             <a href="https://github.com/webbyrous" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="Perfil de Github" className='flex gap-2 items-center text-base md:text-lg transition-colors duration-200 group hover:text-pink'>
-                <span className='text-pink text-2xl md:text-3xl transition-transform duration-200 group-hover:scale-110'><FaGithub /></span>
+                aria-label="Perfil de Github" className='flex gap-2 items-center text-base md:text-lg transition-all duration-200 group hover:text-pink hover:font-semibold'>
+                <span className='text-pink dark:text-dark-pink text-2xl md:text-3xl transition-transform duration-200 group-hover:scale-110'><FaGithub /></span>
                 Github
             </a>
         </div>

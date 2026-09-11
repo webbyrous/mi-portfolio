@@ -5,9 +5,9 @@ export default function PopupProyecto({ proyecto, onClose }) {
   if (!proyecto) return null;
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center" onClick={onClose}>
-      <div onClick={(e) => e.stopPropagation()} className="relative bg-peach-soft p-6 dark:bg-dark-bg-strong dark:shadow-xs dark:shadow-grey-medium dark:border-dark-bg-strong  rounded-lg shadow-xl text-center flex flex-col gap-4 border-grey-medium border-2 dark:text-white">
+      <div onClick={(e) => e.stopPropagation()} className="relative bg-peach-soft p-6 dark:bg-dark-bg-strong shadow-md dark:shadow-dark-pink/50 dark:border-grey-strong/20 rounded-lg shadow-grey-medium/20 text-center flex flex-col gap-4 border-grey-strong/20 border-2 dark:text-white">
          {/* Botón cerrar */}
-             <button onClick={onClose} className="absolute top-2 text-2xl right-4 p-2 rounded-full text-slate-400 hover:text-black hover:text-3xl transition-all cursor-pointer dark:hover:text-pink/80">
+             <button onClick={onClose} className="absolute top-2 text-2xl right-4 p-2 rounded-full text-slate-400 hover:text-black hover:text-3xl transition-all cursor-pointer dark:hover:text-dark-pink/80">
                     <IoIosClose className="" />
             </button>
         <div className="flex flex-col shrink-0 w-75 sm:w-80 md:w-100 snap-center mt-8">
@@ -28,7 +28,7 @@ export default function PopupProyecto({ proyecto, onClose }) {
               {proyecto.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-tag-soft/80 px-2 py-0.5 text-xs rounded-md dark:bg-pink/30"
+                  className="bg-tag-soft/80 px-2 py-0.5 text-xs rounded-md dark:bg-dark-pink/20"
                 >
                   {tag}
                 </span>
@@ -59,7 +59,7 @@ export default function PopupProyecto({ proyecto, onClose }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Código de ${proyecto.title}`}
-                  className="text-xl text-slate-600 hover:text-black transition-all duration-300 hover:scale-125 dark:text-pink dark:hover:text-pink"
+                  className="text-xl text-slate-600 hover:text-black transition-all duration-300 hover:scale-125 dark:text-dark-pink dark:hover:text-pink"
                   title="Repositorio en GitHub"
                 >
                   <FaGithub className="text-2xl" />

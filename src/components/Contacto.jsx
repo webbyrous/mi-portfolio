@@ -70,7 +70,7 @@ export default function Contacto() {
             ></textarea>
             <button
               type="submit"
-              className="bg-pink rounded-lg max-w-max px-7 py-1.5 text-white hover:cursor-pointer hover:bg-pink/60 dark:bg-pink/90 dark:hover:bg-pink hover:shadow-md mx-auto md:mx-0 transition-colors"
+              className="bg-pink/80 rounded-lg max-w-max px-7 py-1.5 text-white hover:cursor-pointer hover:bg-pink/90 dark:bg-dark-pink/85 dark:hover:bg-dark pink hover:shadow-md mx-auto md:mx-0 transition-all duration-300 hover:scale-105"
             >
               {isSubmitting ? "Enviando..." : "Enviar"}
             </button>
