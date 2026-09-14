@@ -34,7 +34,13 @@ export default function Navbar() {
 
   return (
     <nav aria-label='Navegación principal' className='bg-peach backdrop-blur-2xl dark:bg-dark-bg-strong dark:text-grey-medium font-family sticky top-0 lg:relative lg:backdrop-blur-none z-50 transition-colors duration-300 border-b border-grey-medium/50 lg:border-0 dark:border-grey-medium/10'>
-      <div className='flex items-center justify-between lg:justify-center py-4 px-6 lg:px-0 lg:gap-8 md:text-lg '>
+      <div className='flex items-center justify-between py-4 px-6 lg:px-12  lg:gap-8 md:text-xl'>
+        {/* LOGO SVG dinámico */}
+        <div className='flex items-center'>
+          <a href="#inicio">
+            <img src={theme === 'dark' ? '/mi-portfolio/favicon-dark.svg' : '/mi-portfolio/favicon-light.svg'} alt="Logo RB" className='w-12 h-12 md:w-14 md:h-14 object-contain rounded-xl transition-colors duration-300'/>
+          </a>
+        </div>
         {/*Menú de navegación */}
         <ul className={`${isOpen ? 'flex' : 'hidden'} 
           flex-col lg:flex lg:flex-row lg:w-auto lg:static 
@@ -50,21 +56,23 @@ export default function Navbar() {
               );
           })}
         </ul>
-        {/*Botón de cambiar el tema */}
-        <div className='flex gap-2 py-2 px-2 rounded-2xl border-grey-medium/70 dark:border-grey-medium/30 border'>
-          <button aria-label='Cambiar a modo claro' onClick={() => setTheme('light')} className={`p-1 rounded-full cursor-pointer ${theme === 'light' ? 'bg-white text-pink shadow-xs scale-105' 
-                : 'text-slate-600 dark:text-slate-400 dark:hover:text-grey-medium dark:hover:bg-slate-600'}`}>
-            <LuSunMedium />
-          </button>
-          <button aria-label='Cambiar a modo oscuro' onClick={() => setTheme('dark')} className={`p-1 rounded-full cursor-pointer ${theme === 'dark' ? 'bg-slate-700 text-pink shadow-xs scale-105' 
-                : 'text-slate-600 dark:text-slate-400 hover:text-pink'}`}>
-            <RxMoon />
+        <div className='flex items-center gap-3 px-2 md:px-4'>
+          {/*Botón de cambiar el tema */}
+          <div className='flex gap-2 py-1.5 px-2 rounded-2xl border-grey-medium/70 dark:border-grey-medium/30 border'>
+            <button aria-label='Cambiar a modo claro' onClick={() => setTheme('light')} className={`p-1 rounded-full cursor-pointer ${theme === 'light' ? 'bg-white text-pink shadow-xs scale-105'
+                  : 'text-slate-600 dark:text-slate-400 dark:hover:text-grey-medium dark:hover:bg-slate-600'}`}>
+              <LuSunMedium />
+            </button>
+            <button aria-label='Cambiar a modo oscuro' onClick={() => setTheme('dark')} className={`p-1 rounded-full cursor-pointer ${theme === 'dark' ? 'bg-slate-700 text-pink shadow-xs scale-105'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-pink'}`}>
+              <RxMoon />
+            </button>
+          </div>
+          {/*Botón hamburguesa versión móvil */}
+          <button onClick={() => setIsOpen(!isOpen)} className='lg:hidden text-2xl p-2 text-slate-800 dark:text-grey-medium hover:cursor-pointer hover:text-pink transition-colors focus:outline-none' aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"} aria-expanded={isOpen}>
+            {isOpen ? <HiX /> : <HiMenu />}
           </button>
         </div>
-        {/*Botón hamburguesa versión móvil */}
-        <button onClick={() => setIsOpen(!isOpen)} className='lg:hidden text-2xl p-2 text-slate-800 dark:text-grey-medium hover:cursor-pointer hover:text-pink transition-colors focus:outline-none' aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"} aria-expanded={isOpen}>
-          {isOpen ? <HiX /> : <HiMenu />}
-        </button>
       </div>
     </nav>
   )
